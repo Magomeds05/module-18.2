@@ -17,12 +17,14 @@ Including another URLconf
 import UrbanDjango
 from django.contrib import admin
 from django.urls import path
-from UrbanDjango.task2.views import *
+
+from task2 import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('func_view', func_task2),
-    path('class_view', ViewByClass.as_view()),
+    path('func_view/', views.func_task2),
+    path('class_view/', views.ViewByClass.as_view()),
 ]
 
 #python manage.py startapp task2
